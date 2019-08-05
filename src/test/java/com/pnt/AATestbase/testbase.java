@@ -18,10 +18,8 @@ public class testbase {
 	public void createRemoteDriver(String browserType, String scanarioName) {
 	
 		
-		//String sauceUsername = "pntuser";
-		//String sauceAccesskey = "fbc2e74f-f8c6-4d7d-ac89-66cb1b984af2";
-		String sauceUsername = "MDRasul";
-		String sauceAccesskey = "1df585b2-88bc-4578-8a98-c920e9eaf383";
+		String sauceUsername = "pntuser";
+		String sauceAccesskey = "fbc2e74f-f8c6-4d7d-ac89-66cb1b984af2";
 
 		
 		
