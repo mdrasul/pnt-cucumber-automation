@@ -2,10 +2,14 @@ package com.pnt.stepdefinition;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriverException;
+import org.openqa.selenium.WebElement;
 
 import com.pnt.AATestbase.testbase;
 import com.pnt.pageobject.HomePage;
@@ -19,6 +23,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import io.cucumber.datatable.DataTable;
 
 
 public class login_step extends testbase {
@@ -30,15 +35,14 @@ public class login_step extends testbase {
 	public MyAccountPage myaccount;
 	
 	
-	public String scenarioName;
 
 	@Given("I open browser {string}")
 	public void i_open_browser(String browserName) {
 		// Write code here that turns the phrase above into concrete actions
 		// throw new cucumber.api.PendingException();
-
+		
 		System.out.println(">>> Opening Browser " + browserName);
-		createRemoteDriver(browserName, scenarioName);
+		createDriver("local",browserName, hooks.scenarioName);
 	}
 
 
@@ -52,7 +56,7 @@ public class login_step extends testbase {
 		
 		
 		// Intentaionally Failed 
-		assertEquals("FAILED : ", 1>2 ,true);
+		// assertEquals("FAILED : ", 1>2 ,true);
 
 	}
 
@@ -91,33 +95,79 @@ public class login_step extends testbase {
 		assertEquals("FAILED : Profile Name Found still visible which is not expected !!!", homepage.validateProfileNameasnotexist("James Williams"),true);
 
 	}
-
 	
-	/**  Cucumber Hooks */
-
-	@Before
-	public void beforeAll(Scenario scenario) {
+	
+	// ###### My Accounts Related Steps 
+	@When("I go to my account")
+	public void i_go_to_my_account() {
+	    // Write code here that turns the phrase above into concrete actions
+	    // throw new cucumber.api.PendingException();
 		
-		scenarioName = scenario.getName();
+		homepage.gotoMyAccount();
 	}
 
+	@Then("I see all my account option")
+	public void i_see_all_my_account_option(DataTable optionList) {
+	    // Write code here that turns the phrase above into concrete actions
+	    // For automatic transformation, change DataTable to one of
+	    // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
+	    // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
+	    // Double, Byte, Short, Long, BigInteger or BigDecimal.
+	    //
+	    // For other transformations you can register a DataTableType.
+	    // throw new cucumber.api.PendingException();
+		
+		List<String> myOptionlist = optionList.asList(String.class);
+		
+		System.out.println(">>>>>>>>>>>>>>>>");
 
-	@After
-	public void after(Scenario scenario) {
+		//a[contains(text(),'My Orders')]
+		
+		//div[@class='myaccount_list']//a[contains(@href,'.php')]
+		
+		
+		
+		List<WebElement> alloptionsinUI = driver.findElements(By.xpath("//div[@class='myaccount_list']//div[@class='col-sm-12 col-lg-3 col-md-3']/a"));
+		
+		System.out.println(">>>>>>>>>>>>>>>>");
+		
+		List<String> actualOptionResultList = null;
+		
+		for(int i=0; i<=alloptionsinUI.size();i++) {
+			
+			System.out.println(alloptionsinUI.get(i).getText()  + "|" + myOptionlist.get(i+1));
+			String expOption = myOptionlist.get(i+1);
+			String actualOption = alloptionsinUI.get(i).getText();
 
-		if (scenario.isFailed()) {
-			try {
-				byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-				scenario.embed(screenshot, "image/png");
-			} catch (WebDriverException somePlatformsDontSupportScreenshots) {
-				System.out.println("Error Taking Ecreen Shot");
+			
+			if( expOption.equalsIgnoreCase(actualOption)) {
+				// actualOptionResultList.add("true");
 			}
-			((JavascriptExecutor) driver).executeScript("sauce:job-result=" + "failed");
-			//driver.close();
-		} else {
-			((JavascriptExecutor) driver).executeScript("sauce:job-result=" + "passed");
-			//driver.close();
 		}
-	}
+			
+		System.out.println(actualOptionResultList);
+		
+		
+		
+		
+//		System.out.println(myOptionlist.toString());
+//		System.out.println(myOptionlist.get(0));
+//		System.out.println(myOptionlist.get(1));
+//		System.out.println(myOptionlist.get(2));
+//		System.out.println(myOptionlist.get(3));
 
+
+		
+		
+		
+		// System.out.println("Username - " + list.get(0));
+		// System.out.println("Password - " + list.get(1));
+		// List<String> list = dt.asList(String.class);
+		// System.out.println("Username - " + list.get(0));
+		// System.out.println("Password - " + list.get(1));
+
+		
+		
+		
+	}
 }
