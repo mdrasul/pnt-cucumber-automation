@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="1" name="PNT-Auto- Web tests"
+	skipfailedinvocationcounts="false" junit="false" parallel="classes"
+	thread-count="10" annotations="JDK">
+
+	<test name="PNT All Smoke Test ">
+		<classes>
+			<class name="com.pnt.Atestlayer.smaoketest" />
+		</classes>
+	</test>
+</suite>
