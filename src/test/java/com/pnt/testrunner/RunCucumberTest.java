@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		
-		features = { "src/test/resources/welcommetobdd/login.feature" },
+		features = { "src/test/resources/welcommetobdd/myaccount.feature" },
 		 glue = { "com.pnt.stepdefinition"},
 		tags = { "~@ignore"},
 		plugin = {"pretty", "json:target/cucumber-reports/cucumber.json", "html:target/cucumber-reports"}, monochrome=true
