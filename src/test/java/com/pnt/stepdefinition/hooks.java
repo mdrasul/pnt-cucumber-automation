@@ -1,6 +1,5 @@
 package com.pnt.stepdefinition;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriverException;
@@ -41,11 +40,11 @@ public class hooks extends testbase {
 			} catch (WebDriverException somePlatformsDontSupportScreenshots) {
 				System.out.println("Error Taking Ecreen Shot");
 			}
-			((JavascriptExecutor) driver).executeScript("sauce:job-result=" + "failed");
-			//driver.close();
+			// ((JavascriptExecutor) driver).executeScript("sauce:job-result=" + "failed");
+			driver.close();
 		} else {
 			// ((JavascriptExecutor) driver).executeScript("sauce:job-result=" + "passed");
-			// driver.close();
+			 driver.close();
 		}
 	}
 
