@@ -14,5 +14,5 @@ import org.junit.runner.RunWith;
 
 		
 		)
-public class RunCucumberTest {
+public class DebugOneCucumberTest {
 }

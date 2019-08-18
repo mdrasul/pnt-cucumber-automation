@@ -16,7 +16,7 @@ import com.pnt.pageobject.RegistraionPage;
 
 public class testbase {
 		
-	public WebDriver driver;
+	public static WebDriver driver;
 	public DesiredCapabilities capabilities; 
 
 
