@@ -18,8 +18,6 @@ public class HomePage {
 	PageUtil util;
 
 
-
-
 	public HomePage(WebDriver driver) {
 		testdriver = driver;
 		util = new PageUtil(testdriver);
