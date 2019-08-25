@@ -13,6 +13,7 @@ public class HomePage {
 	String myAccountLInk = "//a[text()=' My Account    				']";
 	String logOutLink = "//a[text()=' Logout    				']";
 	String signupButton = "//*[@id=\"jqSignup\"]";
+	
 
 	WebDriver testdriver;
 	PageUtil util;
@@ -54,12 +55,11 @@ public class HomePage {
 
 	}
 
-	public void startRegistraion() {
-		// Click Login Link 
-		testdriver.findElement(By.xpath(LoginLink)).click();
-		// Click Signup Button
-		testdriver.findElement(By.xpath(signupButton)).click();
-
+	
+	  public void startRegistraion() { // Click Login Link
+	  testdriver.findElement(By.xpath(LoginLink)).click(); // Click Signup Button
+	  testdriver.findElement(By.xpath(signupButton)).click();
+	 
 	}
 
 	public void gotoMyAccount() {
@@ -72,6 +72,37 @@ public class HomePage {
 
 	}
 
+	
+	public void loginWithNewPass(String username, String password) {
+		System.out.println("Login With new password " + username + " password");
+		// Click Login Link 
+		testdriver.findElement(By.xpath(LoginLink)).click();
+
+		// Enter ID & Password 
+		testdriver.findElement(By.xpath(userIdTextBox)).sendKeys(username);
+		testdriver.findElement(By.xpath(passwordTextBox)).sendKeys(password);
+
+		// Click the Login Button 
+		testdriver.findElement(By.xpath(loginButton)).click();
+		util.ApplicationWaitfor(3000);
+
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	//  Validation 
 
 	public boolean validateProfileNameasnotexist(String profileName) {

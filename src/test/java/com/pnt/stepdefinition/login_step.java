@@ -61,15 +61,15 @@ public class login_step extends testbase {
 		assertEquals("FAILED : Profile Name not Matched!!!",homepage.validateProfileNameas("James Williams"),true);
 	}
 
-	@When("I do a logOut")
-	public void i_do_a_logOut() {
-		homepage.logOut();
-	}
-
-	@Then("I not See my profile as james-william")
-	public void i_not_See_my_profile_as_james_william() {
-		assertEquals("FAILED : Profile Name Found still visible which is not expected !!!", homepage.validateProfileNameasnotexist("James Williams"),true);
-	}
+	
+	  
+	
+	  @Then("I not See my profile as james-william") public void
+	  i_not_See_my_profile_as_james_william() {
+	  assertEquals("FAILED : Profile Name Found still visible which is not expected !!!"
+	  , homepage.validateProfileNameasnotexist("James Williams"),true); }
+	 
+	 
 	
 	
 	// ###### My Accounts Related Steps 
@@ -107,4 +107,21 @@ public class login_step extends testbase {
 		System.out.println(actualOptionResultList);		
 		 assertThat("Minimum One Option is Missing ...",actualOptionResultList, not(hasItem("false")));
 	}
+
+	
+
+
+	@When("I do a logOut") 
+	public void i_do_a_logOut() { homepage.logOut(); }
+	
+
+	
 }
+
+
+
+
+
+
+
+
