@@ -1,9 +1,9 @@
-Feature: My Account Page
+Feature: My Menu
   
-  As a user i want to access my account page of multicart website 
-  so i can use all accounts beneift
+  As a user i want to view my menu in multicart website 
+  
 
-  Scenario: User Sees All My Account Option
+  Scenario: User Sees All My Menu Option
     Given I open browser "chrome"
     And I browse to www.multicart.com
     Then I see all my menu option

@@ -28,6 +28,8 @@ public class login_step extends testbase {
 
 
 	private static final List<String> actualOptionResultList = null;
+	private static final List<String> actualMenuResultList = null;
+
 	// Global Variable for the Pages [Home / Registraion / Account
 	public HomePage homepage; 
 	public RegistraionPage registraion; 
@@ -74,7 +76,9 @@ public class login_step extends testbase {
 	
 	@Then("I see all my menu option")
 	public void i_see_all_my_menu_option(DataTable menuOptions) {
+		
 		List<String> myMenulist = menulist.asList(String.class);
+		
 		List<WebElement> allMenuinUI = driver.findElements(By.xpath("//*[@id=\"category_list\"]"));
 		System.out.println(">>>>>>>>>>>>>>>>");
 		List<String> actualMenuResultList = new ArrayList<>();
