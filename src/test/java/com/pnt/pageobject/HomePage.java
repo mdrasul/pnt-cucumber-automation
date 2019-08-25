@@ -14,6 +14,12 @@ public class HomePage {
 	String logOutLink = "//a[text()=' Logout    				']";
 	String signupButton = "//*[@id=\"jqSignup\"]";
 
+//	String clickCandyIcon = "//a[@title='candy']";
+//	String clickBuyNow = "/html/body/div[3]/div/div[1]/div/div[1]/div[2]/div[1]/div[6]/button";
+//	String clickTickBox = "//*[@id=\"item_details\"]/div[2]/div[1]/table/tbody/tr[2]/td[1]/input";
+//	String clickCheckout = "//*[@id=\"btnCheckout\"]";
+//	
+	
 	WebDriver testdriver;
 	PageUtil util;
 
@@ -71,6 +77,24 @@ public class HomePage {
 		testdriver.findElement(By.xpath(myAccountLInk)).click();
 
 	}
+	
+	
+//	public void CandyPurchase() {
+//		
+//		
+//		testdriver.findElement(By.xpath(clickCandyIcon)).click();
+//		testdriver.findElement(By.xpath(clickBuyNow)).click();
+//		testdriver.findElement(By.xpath(clickTickBox)).click();
+//		testdriver.findElement(By.xpath(clickCheckout)).click();
+//		
+//		
+//		
+//		
+//	}
+//	
+//	
+	
+	
 
 	//  Validation 
 
@@ -83,5 +107,8 @@ public class HomePage {
 		System.out.println("Validating Profile Name as " + profileName);
 		return util.isvalidate(profileName, profileNameLabel);
 	}
+	
+	
+	
 
 }
