@@ -27,6 +27,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class login_step extends testbase {
 
 
+	private static final List<String> actualOptionResultList = null;
 	// Global Variable for the Pages [Home / Registraion / Account
 	public HomePage homepage; 
 	public RegistraionPage registraion; 
@@ -71,8 +72,40 @@ public class login_step extends testbase {
 		assertEquals("FAILED : Profile Name Found still visible which is not expected !!!", homepage.validateProfileNameasnotexist("James Williams"),true);
 	}
 	
+	@Then("I see all my menu option")
+	public void i_see_all_my_menu_option(DataTable menuOptions) {
+		List<String> myMenulist = menulist.asList(String.class);
+		List<WebElement> allMenuinUI = driver.findElements(By.xpath("//*[@id=\"category_list\"]"));
+		System.out.println(">>>>>>>>>>>>>>>>");
+		List<String> actualMenuResultList = new ArrayList<>();
+		for(int i=0; i<allMenuinUI.size();i++) {
+			System.out.println(allMenuinUI.get(i).getText()  + "|" + myMenulist.get(i+1));
+			String expMenu = myMenulist.get(i+1);
+			String actualMenu = allMenuinUI.get(i).getText();
+			if( expMenu.equalsIgnoreCase(actualMenu)) {
+				actualMenuResultList.add("true");
+				} else {
+				  
+				   actualMenuResultList.add("false");
+
+					
+					System.out.println(actualMenuResultList);		
+					 assertThat("Minimum One Option is Missing ...",actualMenuResultList, not(hasItem("false")));
+				}
+
+		}
+
+		}
+
 	
-	// ###### My Accounts Related Steps 
+	
+		
+		
+	
+		
+	
+		
+		// ###### My Accounts Related Steps 
 	@When("I go to my account")
 	public void i_go_to_my_account() {
 		homepage.gotoMyAccount();
