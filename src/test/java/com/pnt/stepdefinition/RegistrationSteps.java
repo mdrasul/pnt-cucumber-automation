@@ -7,7 +7,7 @@ import cucumber.api.java.en.Then;
 
 public class RegistrationSteps {
 
-     Registration2 reg2;
+     Registration2 reg2 = new Registration2();
 
 	@Given("I click on the login button")
 	public void i_click_on_the_login_button() {

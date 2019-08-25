@@ -1,13 +1,4 @@
 Feature: registration and change address
-
-
- Scenario: Login As James William
-    Given I open browser "chrome"
-    And I browse to www.multicart.com
-    And I login with my id password
-    Then I See my profile as james-william
-
-    
     
     
     Scenario: registration My name
