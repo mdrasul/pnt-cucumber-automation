@@ -18,11 +18,6 @@ public class testbase {
 		
 	public static WebDriver driver;
 	public DesiredCapabilities capabilities; 
-
-
-	
-	
-	
 	
 	public void createDriver(String runOn,String browserType, String scanarioName) {
 		
@@ -30,10 +25,7 @@ public class testbase {
 			runonLocalMachine(browserType,scanarioName);
 		} else if (runOn.equalsIgnoreCase("grid")) {
 			runonSauceLab(browserType,scanarioName);
-		}
-			
-			
-		
+		}	
 	}
 	
 	public void runonLocalMachine(String browserType, String scanarioName) {
