@@ -1,4 +1,4 @@
-Feature: My Menu
+Feature: My Menus
   
   As a user i want to view my menu in multicart website 
   
