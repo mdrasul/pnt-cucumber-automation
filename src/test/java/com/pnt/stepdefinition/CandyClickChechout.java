@@ -55,6 +55,8 @@ public class CandyClickChechout extends testbase {
 	public void i_click_Checkout() {
 		System.out.println("click checkout");
 
+		
+		
 	}
 
 	
