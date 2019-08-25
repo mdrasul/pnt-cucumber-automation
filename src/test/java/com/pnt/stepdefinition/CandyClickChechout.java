@@ -11,7 +11,6 @@ public class CandyClickChechout extends testbase {
 
 	public HomePage homepage;
 
-
 	String clickCandyIcon = "/html/body/div[2]/div[1]/div[8]/div[3]/div";
 	String clickBuyNow = "/html/body/div[3]/div/div[1]/div/div[1]/div[2]/div[1]/div[6]/button";
 	String clickTickBox = "//*[@id=\"item_details\"]/div[2]/div[1]/table/tbody/tr[2]/td[1]/input";

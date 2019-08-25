@@ -10,5 +10,4 @@ Feature: go to multicart.com and buy some Candy
     When i click Buy Now
     And i click checkbox
     Then i click Checkout
-
   
