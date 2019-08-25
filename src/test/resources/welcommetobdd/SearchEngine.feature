@@ -1,4 +1,4 @@
-Feature: Search Engine Bar
+Feature: Search Engine
   
   As a user I expect to perform a search and
   Validate at least one search result of 
