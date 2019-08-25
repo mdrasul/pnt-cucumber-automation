@@ -71,6 +71,11 @@ public class login_step extends testbase {
 		assertEquals("FAILED : Profile Name Found still visible which is not expected !!!", homepage.validateProfileNameasnotexist("James Williams"),true);
 	}
 	
+	@Then("I see my footer features")
+	public void i_see_my_footer_features() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new cucumber.api.PendingException();
+	}
 	
 	// ###### My Accounts Related Steps 
 	@When("I go to my account")
@@ -108,3 +113,5 @@ public class login_step extends testbase {
 		 assertThat("Minimum One Option is Missing ...",actualOptionResultList, not(hasItem("false")));
 	}
 }
+
+
