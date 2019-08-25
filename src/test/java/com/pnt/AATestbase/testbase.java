@@ -38,7 +38,7 @@ public class testbase {
 	
 	public void runonLocalMachine(String browserType, String scanarioName) {
 		
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\zrifa\\eclipse-workspace\\chromedriver_win32\\chromedriver.exe");
 
 		if(browserType.equalsIgnoreCase("Chrome")) {
 			 
