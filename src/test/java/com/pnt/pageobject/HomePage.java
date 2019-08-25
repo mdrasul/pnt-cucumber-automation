@@ -13,6 +13,8 @@ public class HomePage {
 	String myAccountLInk = "//a[text()=' My Account    				']";
 	String logOutLink = "//a[text()=' Logout    				']";
 	String signupButton = "//*[@id=\"jqSignup\"]";
+	String searchHeaderField = "//input[@class= 'search_header_feild']";
+	String searchHeaderButton = "//input[@class= 'search_header_btt']";
 
 	WebDriver testdriver;
 	PageUtil util;
@@ -70,6 +72,14 @@ public class HomePage {
 		// Driver Click on My Account Link 
 		testdriver.findElement(By.xpath(myAccountLInk)).click();
 
+	}
+	
+	public void enterSearchInfo(String option) {
+		//Driver will input information inside search bar
+		testdriver.findElement(By.xpath(searchHeaderField)).sendKeys(option);
+		
+		//Driver will click search button
+		testdriver.findElement(By.xpath(searchHeaderButton)).click();
 	}
 
 	//  Validation 
