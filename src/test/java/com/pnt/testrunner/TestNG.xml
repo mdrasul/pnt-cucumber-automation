@@ -1,0 +1,10 @@
+<suite name="ComFramework">
+	<test name="Different Testng Feature Test">
+		<classes>
+			<class name="test.HomePageTest" />
+			<class name="test.MyAccountPageTest" />
+			<class name="test.ReturnRequestPageTest" />
+
+		</classes>
+	</test>
+</suite>
