@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 public class MyAccountPage {
 	
 	// Locators 
-	String myorderlink = "//a[text()=\"My Orders\"]";
+	String myorderlink = "//a[text()='My Orders']";
 
 	
 	WebDriver testdriver;
@@ -19,10 +19,11 @@ public class MyAccountPage {
 	
 	
 	public boolean validateMyOrderLink(String linkName) {
-		return util.isvalidate(linkName,myorderlink);
+		return util.isvalidate(linkName, myorderlink);
 	}
 	
+	public void clickMyOrders() {
+		testdriver.findElement(By.xpath(myorderlink)).click();
+	}
 	
-	
-
 }
