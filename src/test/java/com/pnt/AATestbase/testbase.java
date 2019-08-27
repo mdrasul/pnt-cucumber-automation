@@ -10,46 +10,35 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import com.pnt.pageobject.HomePage;
-import com.pnt.pageobject.MyAccountPage;
-import com.pnt.pageobject.RegistraionPage;
-
 public class testbase {
-		
+
 	public static WebDriver driver;
-	public DesiredCapabilities capabilities; 
+	public DesiredCapabilities capabilities;
 
+	public void createDriver(String runOn, String browserType, String scanarioName) {
 
-	
-	
-	
-	
-	public void createDriver(String runOn,String browserType, String scanarioName) {
-		
-		if(runOn.equalsIgnoreCase("local")) {
-			runonLocalMachine(browserType,scanarioName);
+		if (runOn.equalsIgnoreCase("local")) {
+			runonLocalMachine(browserType, scanarioName);
 		} else if (runOn.equalsIgnoreCase("grid")) {
-			runonSauceLab(browserType,scanarioName);
+			runonSauceLab(browserType, scanarioName);
 		}
-			
-			
-		
-	}
-	
-	public void runonLocalMachine(String browserType, String scanarioName) {
-		
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/chromedriver");
 
-		if(browserType.equalsIgnoreCase("Chrome")) {
-			 
+	}
+
+	public void runonLocalMachine(String browserType, String scanarioName) {
+
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/chromedriver.exe");
+
+		if (browserType.equalsIgnoreCase("Chrome")) {
+
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();
-			} else if (browserType.equals("mozilla")) {			 
+		} else if (browserType.equals("mozilla")) {
 			driver = new FirefoxDriver();
-			}
-		
+		}
+
 	}
-	
+
 	public void runonSauceLab(String browserType, String scanarioName) {
 		String sauceUsername = "pntuser";
 		String sauceAccesskey = "fbc2e74f-f8c6-4d7d-ac89-66cb1b984af2";
@@ -87,8 +76,4 @@ public class testbase {
 		}
 	}
 
-	
-	
-	
-	
 }
