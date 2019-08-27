@@ -19,11 +19,6 @@ public class testbase {
 	public static WebDriver driver;
 	public DesiredCapabilities capabilities; 
 
-
-	
-	
-	
-	
 	public void createDriver(String runOn,String browserType, String scanarioName) {
 		
 		if(runOn.equalsIgnoreCase("local")) {
@@ -32,13 +27,11 @@ public class testbase {
 			runonSauceLab(browserType,scanarioName);
 		}
 			
-			
-		
 	}
 	
 	public void runonLocalMachine(String browserType, String scanarioName) {
 		
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/chromedriver");
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/chromedriver.exe");
 
 		if(browserType.equalsIgnoreCase("Chrome")) {
 			 
